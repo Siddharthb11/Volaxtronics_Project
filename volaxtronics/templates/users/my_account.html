@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="w-icon" href="{% static 'images/volax.jpg' %}" />
+    <title>Volaxtronics</title>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    body {
+      background-color: rgb(255, 255, 255);
+      background-size: cover;
+      background-position: center;
+    }
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card{
+      background: rgba(255, 255, 255, 0.556);
+      backdrop-filter: blur(2px);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="navbar" id="nav2" style="margin-bottom: 10px;">
+        <div id="left_nav">
+            <h3 style="color: aliceblue;">Volaxtronics</h3>
+        </div>
+        <div id="right_nav">
+            <nav>
+                <a href="/products/home">Home</a>
+                <a href="/products/store">Store</a>
+                {% if user.is_authenticated %}
+                <a href="/users/logout">Logout</a>
+                <a href="/users/profile">My Account <i class="bi bi-person-circle"></i></a>
+                {% else %}
+                <a href="/users/login">Login</a>
+                <a href="/users/register">Registration</a>
+                {% endif %}
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row center">
+          <div class="col-md-7">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="text-center">User Details</h4>
+              </div>
+              <div class="card-body">
+                {% if error_msg %}
+                <div class="alert alert-danger" role="alert">
+                  {{ error_msg }}
+                </div>
+                {% endif %}
+                <form method="post">
+                  {% csrf_token %}
+                  <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" class="form-control" id="fname" name="fname" value="{{customer.uid}}">
+                  </div>
+                  <hr>
+                  <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" class="form-control" name="lname" id="lname" value="{{customer.last_name}}">
+                  </div>
+                  <hr>
+                  <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" class="form-control" name="phone" id="phone" value="{{customer.phone}}">
+                  </div>
+                  <hr>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" value="{{customer.email}}">
+                  </div>
+                  <hr>
+                  <div class="form-group">
+                    <label for="address_type">Type</label>
+                        <select name="address_type" id="address_type" value="">
+                            <option value="home">Home</option>
+                            <option value="office">Office</option>
+                            <option value="other">Other</option>
+                        </select>
+                  </div>
+                  <hr>
+                  <div class="form-group">
+                    <label for="full_address">Shipping Address</label>
+                    <br>
+                    <textarea name="full_address" id="full_address" cols="75" rows="5">
+                        {{customerd.full_address}}
+                    </textarea>
+                  </div>
+                  <hr>
+                  <div class="form-group">
+                    <label for="pincode">PinCode</label>
+                    <input type="number" id="pincode" name="pincode" value="{{customer.pincode}}">
+                  </div>
+                  <hr>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

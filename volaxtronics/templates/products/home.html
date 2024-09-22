@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="w-icon" href="{% static 'images/volax.jpg' %}" />
+  <title>Volaxtronics</title>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script> -->
+    
+</head>
+
+<body class="bg-light">
+  <div class="navbar" id="nav2">
+    <div id="left_nav">
+      <h3 style="color: aliceblue">Volaxtronics</h3>
+    </div>
+    <div id="right_nav">
+      <nav>
+        <a href="/products/home">Home</a>
+        <a href="/products/store">Store</a>
+        <a href="/products/contact">Contact Us</a>
+      </nav>
+    </div>
+  </div>
+  <div class="caurosel">
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'images/mobiles_car1.jpg' %}" class="d-block w-100" alt="..." height="450px" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Mobiles at Best Price!</h5>
+            <p>We sell every brand's mobile possible at reasonable price.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/asus_car1.jpg' %}" class="d-block w-100" alt="..." height="450px" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Best Laptop Deals!</h5>
+            <p>
+              Unleash productivity with top-notch laptops, your ultimate companions.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/home_app_car1.avif' %}" class="d-block w-100" alt="..." height="450px" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Premium Home Appliances!</h5>
+            <p>
+              Elevate comfort, simplify tasks: premium home appliances for you.
+            </p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <div class="category_browse">
+    <h2>Browse Category Wise</h2>
+    <hr />
+    <div class="container">
+      <div class="row">
+        <div class="col-4 bg-blue">
+          <div class="card" style="width: 18rem">
+            <img src="{% static 'images/mobiles_card.avif' %}" class="card-img-top card-css" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title" style="text-align: center">Mobiles</h5>
+              <h5 style="text-align: center">
+                <a href="/products/filter/Mobiles" class="btn btn-primary">Browse Here</a>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 bg-green">
+          <div class="card" style="width: 18rem">
+            <img src="{% static 'images/lap_card.webp' %}" class="card-img-top card-css" alt="..." height="287px"
+              width="200px" />
+            <div class="card-body">
+              <h5 class="card-title" style="text-align: center">Laptops</h5>
+              <h5 style="text-align: center">
+                <a href="/products/filter/Laptops" class="btn btn-primary">Browse Here</a>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 bg-yellow">
+          <div class="card" style="width: 18rem">
+            <img src="{% static 'images/WM_card.jpg' %}" class="card-img-top card-css" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title" style="text-align: center">
+                Home Appliances
+              </h5>
+              <h5 style="text-align: center">
+                <a href="/products/filter/Home Appliances" class="btn btn-primary">Browse Here</a>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="feature_area">
+    <h2>Featured Products</h2>
+    <hr />
+
+    <div class="container">
+      <div class="row">
+        {% for product in products %}
+        <div class="card card-items" style="width: 18rem">
+          <br />
+          <img src="http://127.0.0.1:8000/products/media/{{product.image}}" alt="Broken" />
+          <hr />
+          <div class="card-text">
+            <p style="font-weight: 600;">{{product.name}}</p>
+            <p><span>Price: </span><span>&#8377;</span>{{product.price}}</p>
+            <h6 style="text-align: center">
+              <button id="product_redirect_btn" class="styled-button">
+                <a href="/products/store" class="a_css">Go to Store</a>
+              </button>
+            </h6>
+            <br />
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <br /><br />
+  <footer class="footer" style="background-color: #1d667a">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <br />
+          <span style="color: #ffffff">Follow Us: </span><a href="https://www.instagram.com/bhoir_siddharth11?igsh=dzF0bHh4NTd2M2Jw" target="_blank"><i
+              class="fab fa-instagram" style="color: #ffffff"></i></a>
+          <a href="https://github.com/Siddharthb11" target="_blank"><i class="fab fa-github"
+              style="color: #ffffff; margin-left: 5px; margin-right: 5px"></i></a>
+          <a href="https://www.linkedin.com/in/siddharth-bhoir-da-ds-cloud/" target="_blank"><i class="fab fa-linkedin" style="color: #ffffff"></i></a>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <br />
+          <p style="color: #ffffff">
+            &copy; 2024 Volaxtronics. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

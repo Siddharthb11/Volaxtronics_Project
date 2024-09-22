@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="w-icon" href="{% static 'images/volax.jpg' %}" />
+  <title>Volaxtronics</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: rgb(255, 255, 255);
+      background-size: cover;
+      background-position: center;
+    }
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card{
+      background: rgba(255, 255, 255, 0.556);
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar" id="nav2">
+    <div id="left_nav">
+        <h3 style="color: aliceblue;">Volaxtronics</h3>
+    </div>
+    <div id="right_nav">
+        <nav>
+            <a href="/products/home">Home</a>
+            <a href="/products/store">Store</a>
+        </nav>
+    </div>
+</div>
+  <div class="container">
+    <div class="row center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="text-center">Register</h4>
+          </div>
+          <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+              {% if error_msg %}
+              <div class="alert alert-danger" role="alert">
+                {{ error_msg }}
+              </div>
+              {% endif %}
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
+              </div>
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm Password">
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <p class="mt-3">Already Signed Up? <a href="/users/login">Log In</a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer fixed-bottom" style="background-color: #1d667a">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <br />
+          <span style="color: #ffffff">Follow Us: </span><a href="https://www.instagram.com/bhoir_siddharth11?igsh=dzF0bHh4NTd2M2Jw" target="_blank"><i
+              class="fab fa-instagram" style="color: #ffffff"></i></a>
+          <a href="https://github.com/Siddharthb11" target="_blank"><i class="fab fa-github"
+              style="color: #ffffff; margin-left: 5px; margin-right: 5px"></i></a>
+          <a href="https://www.linkedin.com/in/siddhart-bhoir-05ab53272/" target="_blank"><i class="fab fa-linkedin" style="color: #ffffff"></i></a>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <br />
+          <p style="color: #ffffff">
+            &copy; 2024 Volaxtronics. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
